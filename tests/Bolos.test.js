@@ -17,3 +17,22 @@ test('should calc the score', () => {
     bolos.calcPoints()
     expect(bolos.calcScore()[9]).toBe(133)
 })
+
+
+test('should calc the score, the score should be 0', () => {
+  const pinsDown = [
+    [0, 0],
+    [0, 0],
+    [0, 0],
+    [0, 0],
+    [0, 0],
+    [0, 0],
+    [0, 0],
+    [0, 0],
+    [0, 0],
+    [0, 0, 0],
+    [0, 0, 0]]
+    const bolos = new Bolos(pinsDown);
+    bolos.calcPoints()
+    expect(bolos.calcScore()[9]).toBe(0)
+})
