@@ -1,8 +1,9 @@
 {
   "type": "module",
-"scripts": {
-"test": "jest"
-},
+  "scripts": {
+    "test": "jest",
+    "all": "jest --watchAll"
+  },
   "devDependencies": {
     "eslint": "^8.21.0",
     "eslint-config-standard": "^17.0.0",

@@ -1,5 +1,7 @@
 const {Bolos} = require('../Bolos.js')
 
+
+
 test('should calc the score', () => {
   const pinsDown = [
     [1, 4],

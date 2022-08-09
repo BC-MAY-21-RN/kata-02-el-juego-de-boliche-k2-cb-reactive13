@@ -1,5 +1,8 @@
 /* eslint-disable indent */
 /* eslint-disable space-before-function-paren */
+// TODO, condicionar la ultima posicion
+// TODO, inicializar aleatoriamente los pinsDowns
+
 class Bolos {
     constructor(pinsDown) {
         this.pinsDown = pinsDown
