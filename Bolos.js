@@ -1,19 +1,8 @@
 /* eslint-disable indent */
 /* eslint-disable space-before-function-paren */
 class Bolos {
-    constructor() {
-        this.pinsDown = [
-            [1, 4],
-            [4, 5],
-            [6, 4],
-            [5, 5],
-            [10, 0],
-            [0, 1],
-            [7, 3],
-            [6, 4],
-            [10, 0],
-            [2, 8, 6],
-            [0, 0, 0]]
+    constructor(pinsDown) {
+        this.pinsDown = pinsDown
         this.cont = 0
         this.points = []
         this.score = []
@@ -52,6 +41,4 @@ class Bolos {
     }
 }
 
-const bolos = new Bolos()
-console.log(bolos.calcPoints())
-console.log(bolos.calcScore())
+module.exports = {Bolos};
