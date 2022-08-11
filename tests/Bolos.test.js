@@ -99,17 +99,17 @@ test('if the first 2 launchs are 4 and 6 the match should be a spare', () => {
 })
 
 test('should return a matrix with lenght 10', () => {
-  let bolos = new Bolos();
-  const matrix = bolos.calcMatriz();
+  const bolos = new Bolos()
+  const matrix = bolos.calcMatriz()
   expect(matrix.length).toBe(10)
 })
 
 test('should return values between 0 and 10 until 9 turn', () => {
-  let bolos = new Bolos();
-  bolos.calcMatriz();
+  const bolos = new Bolos()
+  bolos.calcMatriz()
   const matrix = bolos.calcPoints()
-  for (let index = 0; index < matrix.length-1; index++) {
-    expect(matrix[index]<=10).toBeTruthy()
+  for (let index = 0; index < matrix.length - 1; index++) {
+    expect(matrix[index] <= 10).toBeTruthy()
   }
 })
 
