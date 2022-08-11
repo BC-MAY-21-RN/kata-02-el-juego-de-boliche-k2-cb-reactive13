@@ -20,7 +20,7 @@ class Bolos {
     }
 
     calcScore() {
-        for (let i = 0; i < this.points.length - 1; i++) {
+        for (let i = 0; i < this.points.length; i++) {
             if (this.pinsDown[i][0] === 10) this.evStrike(i)
             else if (this.points[i] === 10) this.evSpare(i)
             else this.evAdd(i)
@@ -39,6 +39,9 @@ class Bolos {
                 break
             case 9:
                 this.score.push(this.score[i - 1] + this.pinsDown[i][0] + this.pinsDown[i][1] + this.pinsDown[i][2])
+                break
+            case 8:
+                this.score.push(this.score[i - 1] + this.pinsDown[i][0] + this.pinsDown[i + 1][0] + this.pinsDown[i + 1][1])
                 break
             default:
                 if (this.pinsDown[i + 1][0] !== 10) this.score.push(this.points[i] + this.score[i - 1] + this.pinsDown[i + 1][0] + this.pinsDown[i + 1][1])

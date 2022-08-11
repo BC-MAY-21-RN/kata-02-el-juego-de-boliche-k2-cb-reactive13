@@ -19,7 +19,6 @@ test('should calc the score', () => {
   expect(bolos.calcScore()[9]).toBe(133)
 })
 
-
 test('should calc the score, the score should be 0', () => {
   const pinsDown = [
     [0, 0],
@@ -49,8 +48,7 @@ test('max puntuation on all strikes should be 300', () => {
     [10, 0],
     [10, 0],
     [10, 0],
-    [10, 10, 10],
-    [0, 0, 0]]
+    [10, 10, 10]]
   const bolos = new Bolos(pinsDown)
   bolos.calcPoints()
   bolos.calcScore()
