@@ -1,6 +1,5 @@
-const {Bolos} = require('../Bolos.js')
-
-
+/* eslint-disable no-undef */
+const { Bolos } = require('../Bolos.js')
 
 test('should calc the score', () => {
   const pinsDown = [
@@ -15,9 +14,9 @@ test('should calc the score', () => {
     [10, 0],
     [2, 8, 6],
     [0, 0, 0]]
-    const bolos = new Bolos(pinsDown);
-    bolos.calcPoints()
-    expect(bolos.calcScore()[9]).toBe(133)
+  const bolos = new Bolos(pinsDown)
+  bolos.calcPoints()
+  expect(bolos.calcScore()[9]).toBe(133)
 })
 
 
@@ -34,7 +33,27 @@ test('should calc the score, the score should be 0', () => {
     [0, 0],
     [0, 0, 0],
     [0, 0, 0]]
-    const bolos = new Bolos(pinsDown);
-    bolos.calcPoints()
-    expect(bolos.calcScore()[9]).toBe(0)
+  const bolos = new Bolos(pinsDown)
+  bolos.calcPoints()
+  expect(bolos.calcScore()[9]).toBe(0)
+})
+
+test('max puntuation on all strikes should be 300', () => {
+  const pinsDown = [
+    [10, 0],
+    [10, 0],
+    [10, 0],
+    [10, 0],
+    [10, 0],
+    [10, 0],
+    [10, 0],
+    [10, 0],
+    [10, 0],
+    [10, 10, 10],
+    [0, 0, 0]]
+  const bolos = new Bolos(pinsDown)
+  bolos.calcPoints()
+  bolos.calcScore()
+  console.log(bolos.score)
+  expect(bolos.score[9]).toBe(300)
 })
