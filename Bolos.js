@@ -29,8 +29,22 @@ class Bolos {
     }
 
     evStrike(i) {
-        if (i === 0) this.score.push(this.points[i] + this.pinsDown[i + 1][0] + this.pinsDown[i + 1][1])
-        else this.score.push(this.points[i] + this.score[i - 1] + this.pinsDown[i + 1][0] + this.pinsDown[i + 1][1])
+        // if (i === 0) this.score.push(this.points[i] + this.pinsDown[i + 1][0] + this.pinsDown[i + 1][1])
+        // else this.score.push(this.points[i] + this.score[i - 1] + this.pinsDown[i + 1][0] + this.pinsDown[i + 1][1])
+
+        switch (i) {
+            case 0:
+                if (this.pinsDown[i + 1][0] !== 10) this.score.push(this.points[i] + this.pinsDown[i + 1][0] + this.pinsDown[i + 1][1])
+                else this.score.push(this.points[i] + this.pinsDown[i + 1][0] + this.pinsDown[i + 2][0])
+                break
+            case 9:
+                this.score.push(this.score[i - 1] + this.pinsDown[i][0] + this.pinsDown[i][1] + this.pinsDown[i][2])
+                break
+            default:
+                if (this.pinsDown[i + 1][0] !== 10) this.score.push(this.points[i] + this.score[i - 1] + this.pinsDown[i + 1][0] + this.pinsDown[i + 1][1])
+                else this.score.push(this.points[i] + this.score[i - 1] + this.pinsDown[i + 1][0] + this.pinsDown[i + 2][0])
+                break
+        }
     }
 
     evSpare(i) {
@@ -44,4 +58,4 @@ class Bolos {
     }
 }
 
-module.exports = {Bolos};
+module.exports = { Bolos }
