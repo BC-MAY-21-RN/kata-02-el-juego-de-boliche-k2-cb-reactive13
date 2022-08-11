@@ -10,6 +10,30 @@ class Bolos {
         this.points = []
         this.score = []
     }
+    calcMatriz() {
+        let control = [];
+        let pins = []; 
+        let x = 0;
+        for (let i = 0; i < 10; i++) {
+          control = [];
+          if (i == 9) {
+            control.push(Math.floor(Math.random() * 11));
+            control.push(Math.floor(Math.random() * (11 - control[0])));
+            x = (control[0] + control[1])
+            if (x == 10)
+                control.push(Math.floor(Math.random() * 11));
+            else 
+                control.push(0)
+            pins.push(control);
+          } else {
+            control.push(Math.floor(Math.random() * 11));
+            control.push(Math.floor(Math.random() * (11 - control[0])));
+            pins.push(control);
+          }
+        }
+        this.pinsDown = pins;
+        return this.pinsDown;
+      }
 
     calcPoints() {
         for (let i = 0; i < this.pinsDown.length; i++) {
@@ -60,5 +84,9 @@ class Bolos {
         else this.score.push(this.points[i] + this.score[i - 1])
     }
 }
+let bolos = new Bolos();
+console.table(bolos.calcMatriz());
+console.log(bolos.calcPoints());
+console.log(bolos.calcScore());
 
 module.exports = { Bolos }
